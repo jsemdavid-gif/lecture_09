@@ -24,11 +24,23 @@ def read_data(file_name, field):
 
 
 
-    file_path = os.path.join(cwd_path, file_name)
+
+def linear_search(sekvence,cislo):
+    dict = {"positions":[],"count":[]}
+    count = 0
+    for index,num in enumerate(sekvence):
+
+        if cislo == num:
+            count = count+1
+            dict["positions"].append(index)
+    dict["count"].append(count)
+    print(dict)
+    return dict
 
 
 def main():
-    read_data("sequential.json","unordered_numbers")
+    sequenc = read_data("sequential.json","unordered_numbers")
+    linear_search(sequenc,9)
     pass
 
 
